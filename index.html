@@ -1,78 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Matrimony Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoulMate - Find Your Perfect Match</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styleflex.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header class="navbar">
-    <h2 class="logo">SoulMate</h2>
+  <!-- NAVIGATION -->
+  <header id="navbar" class="navbar">
+    <div class="logo">SoulMate <span class="heart-icon"><i class="fas fa-heart"></i></span></div>
+
+    <!-- CSS-Only Mobile Menu Toggle -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger">
+      <i class="fas fa-bars"></i>
+      <i class="fas fa-times"></i>
+    </label>
+
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Profiles</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">Why Us?</a></li>
+        <li><a href="#profiles">Profiles</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <!-- MAIN CONTAINER -->
-  <div class="main-container">
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Find Your <span>Forever</span></h1>
+      <p>Connect with thousands of genuine profiles. Your soulmate is just a click away.</p>
+      <a href="#profiles" class="cta-btn">Start Exploring</a>
+    </div>
+  </section>
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <h3>Search Filters</h3>
-      <ul>
-        <li>Age</li>
-        <li>Religion</li>
-        <li>Profession</li>
-        <li>Location</li>
-        <li>Education</li>
-      </ul>
-    </aside>
-
-    <!-- PROFILES SECTION -->
-    <section class="gallery">
-
-      <div class="card">
-        <img src="Ananya.jpg" alt="Profile">
-        <p><strong>Ananya</strong><br>Age: 26<br>Software Engineer</p>
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>Why Choose SoulMate?</h2>
+      <div class="features">
+        <div class="feature-box">
+          <i class="fas fa-user-shield"></i>
+          <h3>Verified Profiles</h3>
+          <p>We ensure every profile is genuine and verified for your safety.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-search-heart"></i>
+          <h3>Smart Matching</h3>
+          <p>Our intelligent system finds matches based on your preferences.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-infinity"></i>
+          <h3>Success Stories</h3>
+          <p>Thousands of couples have found love here. You could be next!</p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="card">
-        <img src="SURYA.jpeg" alt="Profile">
-        <p><strong>Ramisetty Naga Surya Avinash(urgent)</strong><br>Age: 21<br>Business Analyst</p>
+  <!-- PROFILES SECTION -->
+  <section id="profiles" class="profiles">
+    <div class="container">
+      <h2>Featured Profiles</h2>
+      <p class="subtitle">Discover people looking for their special someone.</p>
+
+      <div class="profiles-grid">
+
+        <!-- Card 1: Ananya -->
+        <div class="profile-card-wrapper">
+          <input type="checkbox" id="dislike-1" class="dislike-check">
+          <div class="profile-card">
+            <div class="card-image">
+              <img src="Ananya.jpg" alt="Ananya">
+              <div class="card-overlay">
+                <span class="location"><i class="fas fa-map-marker-alt"></i> Bangalore</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Ananya, 26</h3>
+              <p class="profession">Software Engineer</p>
+              <p class="card-bio">Passionate coder, loves travelling and coffee.</p>
+
+              <div class="card-actions">
+                <!-- Dislike Button -->
+                <label for="dislike-1" class="action-btn dislike-btn" title="Dislike"><i
+                    class="fas fa-times"></i></label>
+
+                <!-- View Details Link (Target Modal) -->
+                <a href="#modal-1" class="details-btn">View Full Details</a>
+
+                <!-- Like Button -->
+                <input type="checkbox" id="like-1" class="like-check">
+                <label for="like-1" class="action-btn like-btn" title="Like"><i class="fas fa-heart"></i></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Surya -->
+        <div class="profile-card-wrapper">
+          <input type="checkbox" id="dislike-2" class="dislike-check">
+          <div class="profile-card">
+            <div class="card-image">
+              <img src="SURYA.jpeg" alt="Surya">
+              <div class="card-overlay">
+                <span class="location"><i class="fas fa-map-marker-alt"></i> Hyderabad</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Surya, 21</h3>
+              <p class="profession">Business Analyst</p>
+              <p class="card-bio">Ambitious and driven. Urgent requirement.</p>
+              <div class="card-actions">
+                <label for="dislike-2" class="action-btn dislike-btn"><i class="fas fa-times"></i></label>
+                <a href="#modal-2" class="details-btn">View Full Details</a>
+                <input type="checkbox" id="like-2" class="like-check">
+                <label for="like-2" class="action-btn like-btn"><i class="fas fa-heart"></i></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Pooja -->
+        <div class="profile-card-wrapper">
+          <input type="checkbox" id="dislike-3" class="dislike-check">
+          <div class="profile-card">
+            <div class="card-image">
+              <img src="pooja.jpg" alt="Pooja">
+              <div class="card-overlay">
+                <span class="location"><i class="fas fa-map-marker-alt"></i> Mumbai</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Pooja, 25</h3>
+              <p class="profession">Designer</p>
+              <p class="card-bio">Creative soul, loves art galleries and music.</p>
+              <div class="card-actions">
+                <label for="dislike-3" class="action-btn dislike-btn"><i class="fas fa-times"></i></label>
+                <a href="#modal-3" class="details-btn">View Full Details</a>
+                <input type="checkbox" id="like-3" class="like-check">
+                <label for="like-3" class="action-btn like-btn"><i class="fas fa-heart"></i></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Chandhu -->
+        <div class="profile-card-wrapper">
+          <input type="checkbox" id="dislike-4" class="dislike-check">
+          <div class="profile-card">
+            <div class="card-image">
+              <img src="CHANDHU.jpeg" alt="Chandhu">
+              <div class="card-overlay">
+                <span class="location"><i class="fas fa-map-marker-alt"></i> Chennai</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Chandhu, 22</h3>
+              <p class="profession">Chartered Accountant</p>
+              <p class="card-bio">Focused on career but ready for a relationship.</p>
+              <div class="card-actions">
+                <label for="dislike-4" class="action-btn dislike-btn"><i class="fas fa-times"></i></label>
+                <a href="#modal-4" class="details-btn">View Full Details</a>
+                <input type="checkbox" id="like-4" class="like-check">
+                <label for="like-4" class="action-btn like-btn"><i class="fas fa-heart"></i></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Kavya -->
+        <div class="profile-card-wrapper">
+          <input type="checkbox" id="dislike-5" class="dislike-check">
+          <div class="profile-card">
+            <div class="card-image">
+              <img src="Kavya.jpg" alt="Kavya">
+              <div class="card-overlay">
+                <span class="location"><i class="fas fa-map-marker-alt"></i> Delhi</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Kavya, 27</h3>
+              <p class="profession">HR Manager</p>
+              <p class="card-bio">People person. Loves meaningful conversations.</p>
+              <div class="card-actions">
+                <label for="dislike-5" class="action-btn dislike-btn"><i class="fas fa-times"></i></label>
+                <a href="#modal-5" class="details-btn">View Full Details</a>
+                <input type="checkbox" id="like-5" class="like-check">
+                <label for="like-5" class="action-btn like-btn"><i class="fas fa-heart"></i></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Hemanth -->
+        <div class="profile-card-wrapper">
+          <input type="checkbox" id="dislike-6" class="dislike-check">
+          <div class="profile-card">
+            <div class="card-image">
+              <img src="HEM.jpeg" alt="Hemanth">
+              <div class="card-overlay">
+                <span class="location"><i class="fas fa-map-marker-alt"></i> Pune</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Hemanth, 23</h3>
+              <p class="profession">Entrepreneur</p>
+              <p class="card-bio">Building dreams. Looking for a supportive partner.</p>
+              <div class="card-actions">
+                <label for="dislike-6" class="action-btn dislike-btn"><i class="fas fa-times"></i></label>
+                <a href="#modal-6" class="details-btn">View Full Details</a>
+                <input type="checkbox" id="like-6" class="like-check">
+                <label for="like-6" class="action-btn like-btn"><i class="fas fa-heart"></i></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+    </div>
+  </section>
 
-      <div class="card">
-        <img src="pooja.jpg" alt="Profile">
-        <p><strong>Pooja</strong><br>Age: 25<br>Designer</p>
+  <!-- MODALS SECTION (One per profile) -->
+
+  <!-- Modal 1: Ananya -->
+  <div id="modal-1" class="modal-wrapper">
+    <a href="#profiles" class="modal-overlay"></a>
+    <div class="modal-content">
+      <a href="#profiles" class="close-modal">&times;</a>
+      <div class="modal-grid">
+        <div class="modal-img">
+          <img src="Ananya.jpg" alt="Ananya">
+        </div>
+        <div class="modal-info">
+          <h2>Ananya</h2>
+          <p class="sub-text">26 Years • Software Engineer</p>
+          <div class="info-list">
+            <div class="info-item"><strong>Date of Birth:</strong> 15 Aug 1999</div>
+            <div class="info-item"><strong>Address:</strong> 123 Tech Park, Indiranagar, Bangalore</div>
+            <div class="info-item"><strong>Phone:</strong> +91 98765 43210</div>
+            <div class="info-item"><strong>Family:</strong> Father (Govt Servant), Mother (Teacher)</div>
+            <div class="info-item"><strong>Financial / Dowry:</strong> No dowry expected. Looking for intellectual
+              compatibility.</div>
+            <div class="info-item about-info">
+              <strong>About:</strong> I am a career-oriented person who enjoys weekend treks and coding. Seeking a
+              partner who respects independence.
+            </div>
+          </div>
+          <a href="#" class="connect-btn">Express Interest</a>
+        </div>
       </div>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="CHANDHU.jpeg"Profile">
-        <p><strong>Chandhu</strong><br>Age: 22<br>Chartered Accountant</p>
+  <!-- Modal 2: Surya -->
+  <div id="modal-2" class="modal-wrapper">
+    <a href="#profiles" class="modal-overlay"></a>
+    <div class="modal-content">
+      <a href="#profiles" class="close-modal">&times;</a>
+      <div class="modal-grid">
+        <div class="modal-img">
+          <img src="SURYA.jpeg" alt="Surya">
+        </div>
+        <div class="modal-info">
+          <h2>Surya</h2>
+          <p class="sub-text">21 Years • Business Analyst</p>
+          <div class="info-list">
+            <div class="info-item"><strong>Date of Birth:</strong> 10 Jan 2005</div>
+            <div class="info-item"><strong>Address:</strong> 45 Financial District, Hyderabad</div>
+            <div class="info-item"><strong>Phone:</strong> +91 91234 56789</div>
+            <div class="info-item"><strong>Family:</strong> Business Class Family. Father owns a textile chain.</div>
+            <div class="info-item"><strong>Financial / Dowry:</strong> Open to discussion. Expecting 50 Lakhs or
+              Business Partnership support.</div>
+            <div class="info-item about-info">
+              <strong>About:</strong> Ambitious and driven. Looking for a partner who can support my business goals.
+              Urgent match required.
+            </div>
+          </div>
+          <a href="#" class="connect-btn">Express Interest</a>
+        </div>
       </div>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="Kavya.jpg" alt="Profile">
-        <p><strong>Kavya</strong><br>Age: 27<br>HR Manager</p>
+  <!-- Modal 3: Pooja -->
+  <div id="modal-3" class="modal-wrapper">
+    <a href="#profiles" class="modal-overlay"></a>
+    <div class="modal-content">
+      <a href="#profiles" class="close-modal">&times;</a>
+      <div class="modal-grid">
+        <div class="modal-img">
+          <img src="pooja.jpg" alt="Pooja">
+        </div>
+        <div class="modal-info">
+          <h2>Pooja</h2>
+          <p class="sub-text">25 Years • Designer</p>
+          <div class="info-list">
+            <div class="info-item"><strong>Date of Birth:</strong> 05 May 2000</div>
+            <div class="info-item"><strong>Address:</strong> 789 Art Lane, Bandra, Mumbai</div>
+            <div class="info-item"><strong>Phone:</strong> +91 99887 76655</div>
+            <div class="info-item"><strong>Family:</strong> Liberal family of artists and musicians.</div>
+            <div class="info-item"><strong>Financial / Dowry:</strong> Strictly No Dowry.</div>
+            <div class="info-item about-info">
+              <strong>About:</strong> Creative soul. I value simplicity, art, and genuine connections over material
+              wealth.
+            </div>
+          </div>
+          <a href="#" class="connect-btn">Express Interest</a>
+        </div>
       </div>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="HEM.jpeg" alt="Profile">
-        <p><strong>Hemanth Reddy</strong><br>Age: 23<br>Entrepreneur</p>
+  <!-- Modal 4: Chandhu -->
+  <div id="modal-4" class="modal-wrapper">
+    <a href="#profiles" class="modal-overlay"></a>
+    <div class="modal-content">
+      <a href="#profiles" class="close-modal">&times;</a>
+      <div class="modal-grid">
+        <div class="modal-img">
+          <img src="CHANDHU.jpeg" alt="Chandhu">
+        </div>
+        <div class="modal-info">
+          <h2>Chandhu</h2>
+          <p class="sub-text">22 Years • Chartered Accountant</p>
+          <div class="info-list">
+            <div class="info-item"><strong>Date of Birth:</strong> 22 Nov 2003</div>
+            <div class="info-item"><strong>Address:</strong> 12 Anna Nagar, Chennai</div>
+            <div class="info-item"><strong>Phone:</strong> +91 88776 65544</div>
+            <div class="info-item"><strong>Family:</strong> Orthodox family. Father is a Retd. Banker.</div>
+            <div class="info-item"><strong>Financial / Dowry:</strong> Traditional setup. 20 Lakhs expected as
+              gold/assets.</div>
+            <div class="info-item about-info">
+              <strong>About:</strong> Highly focused on my career. Looking for a partner who is homely and respects
+              traditions.
+            </div>
+          </div>
+          <a href="#" class="connect-btn">Express Interest</a>
+        </div>
       </div>
+    </div>
+  </div>
 
-    </section>
+  <!-- Modal 5: Kavya -->
+  <div id="modal-5" class="modal-wrapper">
+    <a href="#profiles" class="modal-overlay"></a>
+    <div class="modal-content">
+      <a href="#profiles" class="close-modal">&times;</a>
+      <div class="modal-grid">
+        <div class="modal-img">
+          <img src="Kavya.jpg" alt="Kavya">
+        </div>
+        <div class="modal-info">
+          <h2>Kavya</h2>
+          <p class="sub-text">27 Years • HR Manager</p>
+          <div class="info-list">
+            <div class="info-item"><strong>Date of Birth:</strong> 12 Dec 1998</div>
+            <div class="info-item"><strong>Address:</strong> 34 Green Park, Delhi</div>
+            <div class="info-item"><strong>Phone:</strong> +91 77665 54433</div>
+            <div class="info-item"><strong>Family:</strong> Nuclear family. Parents living in USA.</div>
+            <div class="info-item"><strong>Financial / Dowry:</strong> None. Looking for a well-settled groom.</div>
+            <div class="info-item about-info">
+              <strong>About:</strong> I am a people person. I love traveling and organizing events. Looking for a friend
+              in my partner.
+            </div>
+          </div>
+          <a href="#" class="connect-btn">Express Interest</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: Hemanth -->
+  <div id="modal-6" class="modal-wrapper">
+    <a href="#profiles" class="modal-overlay"></a>
+    <div class="modal-content">
+      <a href="#profiles" class="close-modal">&times;</a>
+      <div class="modal-grid">
+        <div class="modal-img">
+          <img src="HEM.jpeg" alt="Hemanth">
+        </div>
+        <div class="modal-info">
+          <h2>Hemanth</h2>
+          <p class="sub-text">23 Years • Entrepreneur</p>
+          <div class="info-list">
+            <div class="info-item"><strong>Date of Birth:</strong> 01 Apr 2002</div>
+            <div class="info-item"><strong>Address:</strong> 90 Koregaon Park, Pune</div>
+            <div class="info-item"><strong>Phone:</strong> +91 66554 43322</div>
+            <div class="info-item"><strong>Family:</strong> Joint family with business background.</div>
+            <div class="info-item"><strong>Financial / Dowry:</strong> No demands. Looking for someone who supports my
+              startup vision.</div>
+            <div class="info-item about-info">
+              <strong>About:</strong> Passionate about building my company. Need a partner who understands the hustle.
+            </div>
+          </div>
+          <a href="#" class="connect-btn">Express Interest</a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    © 2026 SoulMate Matrimony | All Rights Reserved
+  <footer id="contact" class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">SoulMate</div>
+      <p>Helping hearts find their home since 2026.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 SoulMate Matrimony
+    </div>
   </footer>
 
 </body>
+
 </html>
